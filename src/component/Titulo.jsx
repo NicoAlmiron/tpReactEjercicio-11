@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/DailyPlanet-logo.png";
+import logo from "../assets/DailyPlanetLogo.png";
 
 const Titulo = () => {
   return (

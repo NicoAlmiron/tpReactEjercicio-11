@@ -3,7 +3,6 @@ import { Form, FormGroup, FormSelect } from "react-bootstrap";
 import ListaNoticias from "./ListaNoticias";
 
 const FormularioNoticia = () => {
-  // const [noticia, setNoticia] = useState({});
   const [listaNoticias, setListaNoticia] = useState([]);
   const [category, setCategory] = useState("business");
 
@@ -19,7 +18,6 @@ const FormularioNoticia = () => {
       const respuesta = await fetch(linkCategorias);
 
       const noticias = await respuesta.json();
-      // setNoticia(noticias.results[0]);
       setListaNoticia([...listaNoticias, noticias.results[0]]);
     } catch (error) {
       console.log(error);
