@@ -1,20 +1,20 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 
-const Noticia = () => {
+const Noticia = ({ listaNoticias, i }) => {
   return (
-    <Card style={{ width: "15rem", height: "27rem" }} className="m-2">
-      <Card.Img
-        variant="top"
-        src="https://miro.medium.com/v2/resize:fit:800/1*hFwwQAW45673VGKrMPE2qQ.png"
-      />
+    <Card style={{ width: "15rem" }} className="m-2">
+      <Card.Img variant="top" src={listaNoticias[i].image_url} />
       <Card.Body>
-        <Card.Title>Titulo Noticia</Card.Title>
-        <h6>Pais 🌍</h6>
-        <Card.Text>Descripcion</Card.Text>
+        <p className="mb-3 fst-italic">{listaNoticias[i].creator}📰</p>
+        <Card.Title>{listaNoticias[i].title}</Card.Title>
+        <h6 className="text-secondary">{listaNoticias[i].country} 🌍</h6>
+        <Card.Text row={4}>- {listaNoticias[i].description}</Card.Text>
       </Card.Body>
       <Card.Footer className="text-center">
-        <Button variant="warning">Ver Noticia</Button>
+        <Button variant="warning" href={listaNoticias[i].link} target="blank">
+          Ver Noticia
+        </Button>
       </Card.Footer>
     </Card>
   );
